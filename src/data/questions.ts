@@ -5,49 +5,187 @@ interface Question {
 }
 
 interface RegionQuestions {
-  beginner: Question[]
-  intermediate: Question[]
-  advanced: Question[]
+  [key: string]: {
+    beginner: Question[]
+    intermediate: Question[]
+    advanced: Question[]
+  }
 }
 
-type QuestionsData = {
-  [key: string]: RegionQuestions
-}
-
-export const questionsData: QuestionsData = {
+export const questionsData: RegionQuestions = {
   Japan: {
     beginner: [
-      { front: "こんにちは", back: "Hello", options: ["Hello", "Goodbye", "Thank you", "Good night"] },
-      { front: "ありがとう", back: "Thank you", options: ["Hello", "Please", "Thank you", "Yes"] },
-      { front: "はい", back: "Yes", options: ["No", "Maybe", "Yes", "Please"] },
+      {
+        front: "こんにちは (Konnichiwa)",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+      // Add more beginner questions
     ],
     intermediate: [
-      { front: "お元気ですか", back: "How are you?", options: ["Good morning", "How are you?", "Good night", "Goodbye"] },
-      { front: "お名前は何ですか", back: "What is your name?", options: ["How old are you?", "Where are you from?", "What is your name?", "Nice to meet you"] },
-      { front: "どこから来ましたか", back: "Where are you from?", options: ["How are you?", "Where are you from?", "What time is it?", "Good evening"] },
+      {
+        front: "お元気ですか？ (Ogenki desu ka?)",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+      // Add more intermediate questions
     ],
     advanced: [
-      { front: "申し訳ございません", back: "I'm very sorry", options: ["Excuse me", "I'm very sorry", "Thank you very much", "Nice to meet you"] },
-      { front: "よろしくお願いします", back: "Please take care of me", options: ["Nice to meet you", "Please take care of me", "Thank you very much", "Goodbye"] },
-      { front: "失礼いたします", back: "Excuse me (formal)", options: ["I'm sorry", "Thank you", "Excuse me (formal)", "Good evening"] },
+      {
+        front: "日本語を勉強しています (Nihongo wo benkyou shiteimasu)",
+        back: "I am studying Japanese",
+        options: [
+          "I am studying Japanese",
+          "I like Japanese food",
+          "I live in Japan",
+          "I speak Japanese",
+        ],
+      },
+      // Add more advanced questions
     ],
   },
   France: {
     beginner: [
-      { front: "Bonjour", back: "Hello", options: ["Hello", "Goodbye", "Thank you", "Please"] },
-      { front: "Merci", back: "Thank you", options: ["Please", "Hello", "Thank you", "Goodbye"] },
-      { front: "Au revoir", back: "Goodbye", options: ["Hello", "Thank you", "Please", "Goodbye"] },
+      {
+        front: "Bonjour",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+      // Add more beginner questions
     ],
     intermediate: [
-      { front: "Comment allez-vous?", back: "How are you?", options: ["What's your name?", "How are you?", "Where are you from?", "Good morning"] },
-      { front: "Je m'appelle", back: "My name is", options: ["How are you?", "My name is", "Where are you from?", "Nice to meet you"] },
-      { front: "S'il vous plaît", back: "Please", options: ["Thank you", "You're welcome", "Please", "Goodbye"] },
+      {
+        front: "Comment allez-vous?",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+      // Add more intermediate questions
     ],
     advanced: [
-      { front: "Je ne comprends pas", back: "I don't understand", options: ["I understand", "I don't understand", "Can you repeat?", "I'm sorry"] },
-      { front: "Pouvez-vous répéter?", back: "Can you repeat?", options: ["I understand", "I don't understand", "Can you repeat?", "Where is?"] },
-      { front: "Enchanté(e)", back: "Nice to meet you", options: ["Goodbye", "Please", "Thank you", "Nice to meet you"] },
+      {
+        front: "Je suis en train d'apprendre le français",
+        back: "I am learning French",
+        options: [
+          "I am learning French",
+          "I like French food",
+          "I live in France",
+          "I speak French",
+        ],
+      },
+      // Add more advanced questions
     ],
   },
-  // ... Add similar structure for other regions
+  // Add similar structure for other regions
+  Mexico: {
+    beginner: [
+      {
+        front: "Hola",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+    ],
+    intermediate: [
+      {
+        front: "¿Cómo estás?",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+    ],
+    advanced: [
+      {
+        front: "Estoy aprendiendo español",
+        back: "I am learning Spanish",
+        options: [
+          "I am learning Spanish",
+          "I like Spanish food",
+          "I live in Spain",
+          "I speak Spanish",
+        ],
+      },
+    ],
+  },
+  Italy: {
+    beginner: [
+      {
+        front: "Ciao",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+    ],
+    intermediate: [
+      {
+        front: "Come stai?",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+    ],
+    advanced: [
+      {
+        front: "Sto imparando l'italiano",
+        back: "I am learning Italian",
+        options: [
+          "I am learning Italian",
+          "I like Italian food",
+          "I live in Italy",
+          "I speak Italian",
+        ],
+      },
+    ],
+  },
+  Germany: {
+    beginner: [
+      {
+        front: "Hallo",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+    ],
+    intermediate: [
+      {
+        front: "Wie geht es dir?",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+    ],
+    advanced: [
+      {
+        front: "Ich lerne Deutsch",
+        back: "I am learning German",
+        options: [
+          "I am learning German",
+          "I like German food",
+          "I live in Germany",
+          "I speak German",
+        ],
+      },
+    ],
+  },
+  Brazil: {
+    beginner: [
+      {
+        front: "Olá",
+        back: "Hello",
+        options: ["Hello", "Goodbye", "Thank you", "Please"],
+      },
+    ],
+    intermediate: [
+      {
+        front: "Como você está?",
+        back: "How are you?",
+        options: ["How are you?", "Where are you?", "What time is it?", "Good morning"],
+      },
+    ],
+    advanced: [
+      {
+        front: "Estou aprendendo português",
+        back: "I am learning Portuguese",
+        options: [
+          "I am learning Portuguese",
+          "I like Brazilian food",
+          "I live in Brazil",
+          "I speak Portuguese",
+        ],
+      },
+    ],
+  },
 }
