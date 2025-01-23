@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { Checkbox } from "@/components/ui/checkbox"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface FlashCardProps {
   front: string
@@ -10,9 +11,23 @@ interface FlashCardProps {
   pronunciation?: string
   onCorrect: () => void
   onIncorrect: (selected: string, correct: string) => void
+  onNext: () => void
+  onPrevious: () => void
+  hasNext: boolean
+  hasPrevious: boolean
 }
 
-const FlashCard = ({ front, back, pronunciation, onCorrect, onIncorrect }: FlashCardProps) => {
+const FlashCard = ({ 
+  front, 
+  back, 
+  pronunciation, 
+  onCorrect, 
+  onIncorrect,
+  onNext,
+  onPrevious,
+  hasNext,
+  hasPrevious
+}: FlashCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false)
   const [showPronunciation, setShowPronunciation] = useState(true)
 
@@ -97,6 +112,27 @@ const FlashCard = ({ front, back, pronunciation, onCorrect, onIncorrect }: Flash
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      <div className="flex justify-between items-center mt-4">
+        <Button
+          variant="outline"
+          onClick={onPrevious}
+          disabled={!hasPrevious}
+          className="flex items-center gap-2"
+        >
+          <ChevronLeft className="w-4 h-4" />
+          Previous
+        </Button>
+        <Button
+          variant="outline"
+          onClick={onNext}
+          disabled={!hasNext}
+          className="flex items-center gap-2"
+        >
+          Next
+          <ChevronRight className="w-4 h-4" />
+        </Button>
       </div>
     </div>
   )

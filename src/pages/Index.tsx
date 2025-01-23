@@ -75,7 +75,6 @@ const Index = () => {
       description: "Great job! Keep going!",
       duration: 2000,
     })
-    nextQuestion()
   }
 
   const handleIncorrectAnswer = (selectedAnswer: string, correctAnswer: string) => {
@@ -85,18 +84,20 @@ const Index = () => {
       duration: 3000,
       variant: "destructive",
     })
-    nextQuestion()
   }
 
-  const nextQuestion = () => {
-    setShowAnswer(false)
+  const handleNext = () => {
     if (selectedRegion && difficulty) {
       const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex((prev) => prev + 1)
-      } else {
-        setCurrentQuestionIndex(0)
       }
+    }
+  }
+
+  const handlePrevious = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((prev) => prev - 1)
     }
   }
 
@@ -109,6 +110,16 @@ const Index = () => {
     if (!selectedRegion || !difficulty) return null
     const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
     return questions[currentQuestionIndex]
+  }
+
+  const hasNextQuestion = () => {
+    if (!selectedRegion || !difficulty) return false
+    const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
+    return currentQuestionIndex < questions.length - 1
+  }
+
+  const hasPreviousQuestion = () => {
+    return currentQuestionIndex > 0
   }
 
   return (
@@ -168,8 +179,13 @@ const Index = () => {
                   <FlashCard
                     front={getCurrentQuestion()!.front}
                     back={getCurrentQuestion()!.back}
+                    pronunciation={getCurrentQuestion()!.pronunciation}
                     onCorrect={handleCorrectAnswer}
                     onIncorrect={handleIncorrectAnswer}
+                    onNext={handleNext}
+                    onPrevious={handlePrevious}
+                    hasNext={hasNextQuestion()}
+                    hasPrevious={hasPreviousQuestion()}
                   />
                 ) : getCurrentQuestion() ? (
                   <MultipleChoice
