@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface FlashCardProps {
   front: string
@@ -27,28 +27,53 @@ const FlashCard = ({ front, back, onCorrect, onIncorrect }: FlashCardProps) => {
   }
 
   return (
-    <div className="perspective-1000">
-      <motion.div
-        className={`relative w-full h-64 cursor-pointer transform-style-3d transition-transform duration-500 ${
-          isFlipped ? "rotate-y-180" : ""
-        }`}
-        onClick={handleFlip}
-      >
-        <Card className="absolute w-full h-full p-6 backface-hidden flex items-center justify-center text-2xl font-semibold">
-          {front}
-        </Card>
-        <Card className="absolute w-full h-full p-6 backface-hidden rotate-y-180 flex flex-col items-center justify-center">
-          <div className="text-2xl font-semibold mb-4">{back}</div>
-          <div className="flex gap-2">
-            <Button onClick={() => handleResponse(true)} variant="default">
-              I knew it!
-            </Button>
-            <Button onClick={() => handleResponse(false)} variant="outline">
-              Still learning
-            </Button>
-          </div>
-        </Card>
-      </motion.div>
+    <div className="relative w-[300px] h-[400px] cursor-pointer perspective-1000">
+      <AnimatePresence initial={false} mode="wait">
+        {!isFlipped ? (
+          <motion.div
+            key="front"
+            className="absolute w-full h-full"
+            initial={{ rotateY: 180 }}
+            animate={{ rotateY: 0 }}
+            exit={{ rotateY: -180 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+          >
+            <Card 
+              className="w-full h-full p-6 flex items-center justify-center text-2xl font-semibold bg-card hover:bg-accent/10 transition-colors"
+              onClick={handleFlip}
+            >
+              {front}
+            </Card>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="back"
+            className="absolute w-full h-full"
+            initial={{ rotateY: -180 }}
+            animate={{ rotateY: 0 }}
+            exit={{ rotateY: 180 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+          >
+            <Card className="w-full h-full p-6 flex flex-col items-center justify-center">
+              <div className="text-2xl font-semibold mb-8">{back}</div>
+              <div className="flex gap-4">
+                <Button 
+                  onClick={() => handleResponse(true)}
+                  className="bg-green-500 hover:bg-green-600"
+                >
+                  I knew it!
+                </Button>
+                <Button 
+                  onClick={() => handleResponse(false)}
+                  variant="outline"
+                >
+                  Still learning
+                </Button>
+              </div>
+            </Card>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
