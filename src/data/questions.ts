@@ -104,6 +104,24 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Enakku Tamil Pesa Theriyum",
         options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
       },
+      {
+        front: "நான் இந்தியாவிலிருந்து வருகிறேன்",
+        back: "I am from India",
+        pronunciation: "Naan Indiyavilirundhu Varugiren",
+        options: ["I am from India", "I am going to India", "I like India", "I live in India"],
+      },
+      {
+        front: "உங்களுக்கு தமிழ் தெரியுமா?",
+        back: "Do you know Tamil?",
+        pronunciation: "Ungalukku Tamil Theriyuma?",
+        options: ["Do you know Tamil?", "Do you like Tamil?", "Are you Tamil?", "Can you speak Tamil?"],
+      },
+      {
+        front: "எனக்கு தமிழ் சமையல் மிகவும் பிடிக்கும்",
+        back: "I really like Tamil cuisine",
+        pronunciation: "Enakku Tamil Samayal Migavum Pidikkum",
+        options: ["I really like Tamil cuisine", "I can cook Tamil food", "Tamil food is spicy", "I want Tamil food"],
+      },
     ],
   },
   "Kerala": {
@@ -178,6 +196,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Enikku Kerala bhakshanam ishtamanu",
         options: ["I am learning Malayalam", "I like Kerala food", "I live in Kerala", "I speak Malayalam"],
       },
+      {
+        front: "എനിക്ക് മലയാളം സംസാരിക്കാൻ കഴിയും",
+        back: "I can speak Malayalam",
+        pronunciation: "Enikku Malayalam samsarikkan kazhiyum",
+        options: ["I can speak Malayalam", "I am learning Malayalam", "I like Malayalam", "I understand Malayalam"],
+      },
+      {
+        front: "കേരളം എന്റെ സ്വന്തം നാടാണ്",
+        back: "Kerala is my homeland",
+        pronunciation: "Kerala ente swantham naadanu",
+        options: ["Kerala is my homeland", "I live in Kerala", "I like Kerala", "I am from Kerala"],
+      },
     ],
   },
   "Karnataka": {
@@ -234,6 +264,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Naanu Kannada kaliyuttiddene",
         options: ["I am learning Kannada", "I like Kannada food", "I live in Karnataka", "I speak Kannada"],
       },
+      {
+        front: "ನಾನು ಕರ್ನಾಟಕದಲ್ಲಿ ಹುಟ್ಟಿದೆ",
+        back: "I was born in Karnataka",
+        pronunciation: "Naanu Karnatakadalli huttide",
+        options: ["I was born in Karnataka", "I live in Karnataka", "I like Karnataka", "I am from Karnataka"],
+      },
+      {
+        front: "ನನಗೆ ಕನ್ನಡ ಸಿನಿಮಾ ತುಂಬಾ ಇಷ್ಟ",
+        back: "I really like Kannada movies",
+        pronunciation: "Nanage Kannada cinema tumba ishta",
+        options: ["I really like Kannada movies", "I watch Kannada movies", "Kannada movies are good", "I understand Kannada movies"],
+      },
     ],
   },
   "Maharashtra": {
@@ -251,6 +293,18 @@ export const questionsData: RegionQuestions = {
         back: "How are you?",
         pronunciation: "Kase aahat?",
         options: ["How are you?", "What is your name?", "Where are you going?", "Good morning"],
+      },
+      {
+        front: "तुम्ही कुठे राहता?",
+        back: "Where do you live?",
+        pronunciation: "Tumhi kuthe rahata?",
+        options: ["Where do you live?", "Where are you from?", "Where are you going?", "Where were you born?"],
+      },
+      {
+        front: "मला मराठी खाना आवडतो",
+        back: "I like Marathi food",
+        pronunciation: "Mala Marathi khana aavadto",
+        options: ["I like Marathi food", "I can cook Marathi food", "Marathi food is good", "I want Marathi food"],
       },
     ],
     advanced: [
@@ -286,6 +340,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Main Punjabi sikh reha haan",
         options: ["I am learning Punjabi", "I like Punjabi food", "I live in Punjab", "I speak Punjabi"],
       },
+      {
+        front: "ਮੈਂ ਪੰਜਾਬੀ ਗੀਤ ਸੁਣਦਾ ਹਾਂ",
+        back: "I listen to Punjabi songs",
+        pronunciation: "Main Punjabi geet sunda haan",
+        options: ["I listen to Punjabi songs", "I like Punjabi music", "I sing Punjabi songs", "I understand Punjabi songs"],
+      },
+      {
+        front: "ਪੰਜਾਬੀ ਭੋਜਨ ਬਹੁਤ ਸਵਾਦੀ ਹੈ",
+        back: "Punjabi food is very tasty",
+        pronunciation: "Punjabi bhojan bahut swadi hai",
+        options: ["Punjabi food is very tasty", "I like Punjabi food", "I want Punjabi food", "Punjabi food is spicy"],
+      },
     ],
   },
   "Bengal": {
@@ -311,6 +377,18 @@ export const questionsData: RegionQuestions = {
         back: "I am learning Bengali",
         pronunciation: "Ami Bangla shikhchi",
         options: ["I am learning Bengali", "I like Bengali food", "I live in Bengal", "I speak Bengali"],
+      },
+      {
+        front: "আমি বাংলা গান গাই",
+        back: "I sing Bengali songs",
+        pronunciation: "Ami Bangla gaan gai",
+        options: ["I sing Bengali songs", "I like Bengali music", "I listen to Bengali songs", "I understand Bengali songs"],
+      },
+      {
+        front: "বাংলা সাহিত্য খুব সমৃদ্ধ",
+        back: "Bengali literature is very rich",
+        pronunciation: "Bangla sahityo khub samriddho",
+        options: ["Bengali literature is very rich", "I read Bengali literature", "I like Bengali books", "Bengali is beautiful"],
       },
     ],
   },
