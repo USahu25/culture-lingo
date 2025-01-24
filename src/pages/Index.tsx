@@ -11,34 +11,34 @@ import { useToast } from "@/components/ui/use-toast"
 
 const regions = [
   {
-    name: "Japan",
-    image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9",
-    description: "Master Japanese through cultural expressions and traditions",
+    name: "Tamil Nadu",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220",
+    description: "Learn Tamil and explore the rich Dravidian culture",
   },
   {
-    name: "France",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
-    description: "Learn French with authentic Parisian flair and style",
+    name: "Kerala",
+    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944",
+    description: "Master Malayalam and discover God's own country",
   },
   {
-    name: "Mexico",
-    image: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a",
-    description: "Explore Spanish through vibrant Mexican culture",
+    name: "Karnataka",
+    image: "https://images.unsplash.com/photo-1600100598297-89f0ae6c3b99",
+    description: "Study Kannada and experience the Silicon Valley of India",
   },
   {
-    name: "Italy",
-    image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9",
-    description: "Discover Italian through art, food, and tradition",
+    name: "Maharashtra",
+    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
+    description: "Learn Marathi and explore the land of warriors",
   },
   {
-    name: "Germany",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
-    description: "Learn German with precision and cultural depth",
+    name: "Punjab",
+    image: "https://images.unsplash.com/photo-1623051425306-70cfe23c3639",
+    description: "Master Punjabi and discover the heart of India's culture",
   },
   {
-    name: "Brazil",
-    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
-    description: "Experience Portuguese through Brazilian passion",
+    name: "Bengal",
+    image: "https://images.unsplash.com/photo-1558431382-27e303142255",
+    description: "Study Bengali and explore the cultural capital",
   },
 ]
 
