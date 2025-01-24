@@ -66,6 +66,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Enge Poreenga?",
         options: ["How are you?", "What is your name?", "Where are you going?", "Nice to meet you"],
       },
+      {
+        front: "நீங்கள் எங்கிருந்து வருகிறீர்கள்?",
+        back: "Where are you from?",
+        pronunciation: "Neengal Engirundhu Varugiringal?",
+        options: ["How are you?", "Where are you from?", "What is your name?", "Nice to meet you"],
+      },
+      {
+        front: "உங்களை சந்தித்ததில் மகிழ்ச்சி",
+        back: "Nice to meet you",
+        pronunciation: "Ungalai Santhithathil Magilchi",
+        options: ["How are you?", "Where are you from?", "What is your name?", "Nice to meet you"],
+      },
     ],
     advanced: [
       {
@@ -78,6 +90,18 @@ export const questionsData: RegionQuestions = {
         front: "எனக்கு தமிழ் நாட்டு உணவு பிடிக்கும்",
         back: "I like Tamil Nadu food",
         pronunciation: "Enakku Tamil Naattu Unavu Pidikkum",
+        options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
+      },
+      {
+        front: "நான் தமிழ்நாட்டில் வசிக்கிறேன்",
+        back: "I live in Tamil Nadu",
+        pronunciation: "Naan Tamilnattil Vasikkiren",
+        options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
+      },
+      {
+        front: "எனக்கு தமிழ் பேச தெரியும்",
+        back: "I can speak Tamil",
+        pronunciation: "Enakku Tamil Pesa Theriyum",
         options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
       },
     ],
@@ -102,6 +126,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Suprabhatham",
         options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
       },
+      {
+        front: "ശുഭ സന്ധ്യ",
+        back: "Good Evening",
+        pronunciation: "Shubha Sandhya",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
+      {
+        front: "ശുഭ രാത്രി",
+        back: "Good Night",
+        pronunciation: "Shubha Rathri",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
     ],
     intermediate: [
       {
@@ -114,6 +150,18 @@ export const questionsData: RegionQuestions = {
         front: "നിങ്ങളുടെ പേര് എന്താണ്?",
         back: "What is your name?",
         pronunciation: "Ningalude peru enthanu?",
+        options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
+      },
+      {
+        front: "എവിടെ പോകുന്നു?",
+        back: "Where are you going?",
+        pronunciation: "Evide Pokunnu?",
+        options: ["How are you?", "What is your name?", "Where are you going?", "Nice to meet you"],
+      },
+      {
+        front: "കണ്ടതിൽ സന്തോഷം",
+        back: "Nice to meet you",
+        pronunciation: "Kandathil Santhosham",
         options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
       },
     ],
@@ -140,6 +188,24 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Namaskara",
         options: ["Hello", "Goodbye", "Thank you", "Please"],
       },
+      {
+        front: "ಶುಭ ಬೆಳಗು",
+        back: "Good Morning",
+        pronunciation: "Shubha Belagu",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
+      {
+        front: "ಶುಭ ಸಂಜೆ",
+        back: "Good Evening",
+        pronunciation: "Shubha Sanje",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
+      {
+        front: "ಶುಭ ರಾತ್ರಿ",
+        back: "Good Night",
+        pronunciation: "Shubha Ratri",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
     ],
     intermediate: [
       {
@@ -147,6 +213,18 @@ export const questionsData: RegionQuestions = {
         back: "How are you?",
         pronunciation: "Hegiddira?",
         options: ["How are you?", "What is your name?", "Where are you going?", "Good morning"],
+      },
+      {
+        front: "ನಿಮ್ಮ ಹೆಸರೇನು?",
+        back: "What is your name?",
+        pronunciation: "Nimma Hesarenu?",
+        options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
+      },
+      {
+        front: "ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾದದ್ದು ಸಂತೋಷ",
+        back: "Nice to meet you",
+        pronunciation: "Nimmannu Bhetiyadaddu Santhosa",
+        options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
       },
     ],
     advanced: [
