@@ -75,9 +75,9 @@ const FlashCard = ({
                 className="w-full h-full p-6 flex flex-col items-center justify-center text-2xl font-semibold bg-card hover:bg-accent/10 transition-colors"
                 onClick={handleFlip}
               >
-                <span>{front}</span>
+                <div className="text-center break-words max-w-[250px]">{front}</div>
                 {showPronunciation && pronunciation && (
-                  <span className="text-sm text-muted-foreground mt-2">
+                  <span className="text-sm text-muted-foreground mt-2 text-center break-words max-w-[250px]">
                     {pronunciation}
                   </span>
                 )}
@@ -93,7 +93,7 @@ const FlashCard = ({
               transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             >
               <Card className="w-full h-full p-6 flex flex-col items-center justify-center">
-                <div className="text-2xl font-semibold mb-8">{back}</div>
+                <div className="text-2xl font-semibold mb-8 text-center break-words max-w-[250px]">{back}</div>
                 <div className="flex gap-4">
                   <Button 
                     onClick={() => handleResponse(true)}

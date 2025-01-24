@@ -34,6 +34,18 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Kaalai Vanakkam",
         options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
       },
+      {
+        front: "மாலை வணக்கம்",
+        back: "Good Evening",
+        pronunciation: "Maalai Vanakkam",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
+      {
+        front: "இரவு வணக்கம்",
+        back: "Good Night",
+        pronunciation: "Iravu Vanakkam",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
     ],
     intermediate: [
       {
@@ -48,12 +60,24 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Ungal Peyar Enna?",
         options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
       },
+      {
+        front: "எங்கே போகிறீர்கள்?",
+        back: "Where are you going?",
+        pronunciation: "Enge Poreenga?",
+        options: ["How are you?", "What is your name?", "Where are you going?", "Nice to meet you"],
+      },
     ],
     advanced: [
       {
         front: "நான் தமிழ் கற்றுக்கொண்டிருக்கிறேன்",
         back: "I am learning Tamil",
         pronunciation: "Naan Tamil Katrukondirukkiren",
+        options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
+      },
+      {
+        front: "எனக்கு தமிழ் நாட்டு உணவு பிடிக்கும்",
+        back: "I like Tamil Nadu food",
+        pronunciation: "Enakku Tamil Naattu Unavu Pidikkum",
         options: ["I am learning Tamil", "I like Tamil food", "I live in Tamil Nadu", "I speak Tamil"],
       },
     ],
@@ -72,6 +96,12 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Nandi",
         options: ["Hello", "Goodbye", "Thank you", "Please"],
       },
+      {
+        front: "സുപ്രഭാതം",
+        back: "Good Morning",
+        pronunciation: "Suprabhatham",
+        options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+      },
     ],
     intermediate: [
       {
@@ -80,12 +110,24 @@ export const questionsData: RegionQuestions = {
         pronunciation: "Sukhamano?",
         options: ["How are you?", "What is your name?", "Where are you going?", "Good morning"],
       },
+      {
+        front: "നിങ്ങളുടെ പേര് എന്താണ്?",
+        back: "What is your name?",
+        pronunciation: "Ningalude peru enthanu?",
+        options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
+      },
     ],
     advanced: [
       {
         front: "ഞാൻ മലയാളം പഠിക്കുകയാണ്",
         back: "I am learning Malayalam",
         pronunciation: "Njan Malayalam padikkukayanu",
+        options: ["I am learning Malayalam", "I like Kerala food", "I live in Kerala", "I speak Malayalam"],
+      },
+      {
+        front: "എനിക്ക് കേരള ഭക്ഷണം ഇഷ്ടമാണ്",
+        back: "I like Kerala food",
+        pronunciation: "Enikku Kerala bhakshanam ishtamanu",
         options: ["I am learning Malayalam", "I like Kerala food", "I live in Kerala", "I speak Malayalam"],
       },
     ],
