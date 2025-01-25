@@ -50,6 +50,24 @@ export const karnatakaQuestions: {
       pronunciation: "Nimmannu Bhetiyadaddu Santhosa",
       options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
     },
+    {
+      front: "ನನಗೆ ಸಹಾಯ ಬೇಕು",
+      back: "I need help",
+      pronunciation: "Nanage sahaaya beku",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "ನನಗೆ ದಾರಿ ಗೊತ್ತಿಲ್ಲ",
+      back: "I don't know the way",
+      pronunciation: "Nanage daari gottilla",
+      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+    },
+    {
+      front: "ನಿಮಗೆ ಇಂಗ್ಲಿಷ್ ಗೊತ್ತಾ?",
+      back: "Do you know English?",
+      pronunciation: "Nimage English gotta?",
+      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    }
   ],
   advanced: [
     {

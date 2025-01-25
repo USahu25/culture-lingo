@@ -62,6 +62,24 @@ export const keralaQuestions: {
       pronunciation: "Kandathil Santhosham",
       options: ["How are you?", "What is your name?", "Where are you from?", "Nice to meet you"],
     },
+    {
+      front: "എനിക്ക് സഹായം വേണം",
+      back: "I need help",
+      pronunciation: "Enikku sahayam venam",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "എനിക്ക് വഴി അറിയില്ല",
+      back: "I don't know the way",
+      pronunciation: "Enikku vazhi ariyilla",
+      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+    },
+    {
+      front: "നിങ്ങൾക്ക് ഇംഗ്ലീഷ് അറിയാമോ?",
+      back: "Do you know English?",
+      pronunciation: "Ningalkku English ariyamo?",
+      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    }
   ],
   advanced: [
     {

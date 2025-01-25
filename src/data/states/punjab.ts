@@ -20,6 +20,24 @@ export const punjabQuestions: {
       pronunciation: "Tusi kive ho?",
       options: ["How are you?", "What is your name?", "Where are you going?", "Good morning"],
     },
+    {
+      front: "ਮੈਨੂੰ ਮਦਦ ਚਾਹੀਦੀ ਹੈ",
+      back: "I need help",
+      pronunciation: "Mainu madad chahidi hai",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "ਮੈਨੂੰ ਰਸਤਾ ਨਹੀਂ ਪਤਾ",
+      back: "I don't know the way",
+      pronunciation: "Mainu rasta nahi pata",
+      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+    },
+    {
+      front: "ਕੀ ਤੁਸੀਂ ਅੰਗਰੇਜ਼ੀ ਜਾਣਦੇ ਹੋ?",
+      back: "Do you know English?",
+      pronunciation: "Ki tusi angrezi jaande ho?",
+      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    }
   ],
   advanced: [
     {

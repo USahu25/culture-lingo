@@ -20,6 +20,24 @@ export const bengalQuestions: {
       pronunciation: "Kemon aachhen?",
       options: ["How are you?", "What is your name?", "Where are you going?", "Good morning"],
     },
+    {
+      front: "আমার সাহায্য দরকার",
+      back: "I need help",
+      pronunciation: "Amar sahajyo dorkar",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "আমি রাস্তা জানি না",
+      back: "I don't know the way",
+      pronunciation: "Ami rasta jani na",
+      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+    },
+    {
+      front: "আপনি কি ইংরেজি জানেন?",
+      back: "Do you know English?",
+      pronunciation: "Apni ki Ingreji janen?",
+      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    }
   ],
   advanced: [
     {

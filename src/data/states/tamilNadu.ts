@@ -68,6 +68,24 @@ export const tamilNaduQuestions: {
       pronunciation: "Ungalai Santhithathil Magilchi",
       options: ["How are you?", "Where are you from?", "What is your name?", "Nice to meet you"],
     },
+    {
+      front: "எனக்கு உதவி வேண்டும்",
+      back: "I need help",
+      pronunciation: "Enakku Udhavi Vendum",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "எனக்கு வழி தெரியவில்லை",
+      back: "I am lost",
+      pronunciation: "Enakku Vazhi Theriyavillai",
+      options: ["I am lost", "I need directions", "Where is this?", "Help me"],
+    },
+    {
+      front: "நீங்கள் ஆங்கிலம் பேசுவீர்களா?",
+      back: "Do you speak English?",
+      pronunciation: "Neengal Aangilam Pesuveerkalaa?",
+      options: ["Do you speak English?", "Do you understand me?", "Can you help me?", "What language do you speak?"],
+    }
   ],
   advanced: [
     {

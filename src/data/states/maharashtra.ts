@@ -32,6 +32,24 @@ export const maharashtraQuestions: {
       pronunciation: "Mala Marathi khana aavadto",
       options: ["I like Marathi food", "I can cook Marathi food", "Marathi food is good", "I want Marathi food"],
     },
+    {
+      front: "मला मदत हवी आहे",
+      back: "I need help",
+      pronunciation: "Mala madat havi aahe",
+      options: ["I need help", "I want food", "I am lost", "Call the police"],
+    },
+    {
+      front: "मला रस्ता माहित नाही",
+      back: "I don't know the way",
+      pronunciation: "Mala rasta mahit nahi",
+      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+    },
+    {
+      front: "तुम्हाला इंग्रजी येते का?",
+      back: "Do you know English?",
+      pronunciation: "Tumhala Ingraji yete ka?",
+      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    }
   ],
   advanced: [
     {
