@@ -1,6 +1,5 @@
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface MultipleChoiceProps {
   question: string
@@ -8,67 +7,85 @@ interface MultipleChoiceProps {
   correctAnswer: string
   onCorrect: () => void
   onIncorrect: (selected: string, correct: string) => void
+  onNext?: () => void
+  onPrevious?: () => void
+  hasNext?: boolean
+  hasPrevious?: boolean
+  nextQuestion?: string
+  previousQuestion?: string
 }
 
-const MultipleChoice = ({ question, options, correctAnswer, onCorrect, onIncorrect }: MultipleChoiceProps) => {
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
-  const [showFeedback, setShowFeedback] = useState(false)
-
-  const handleAnswer = (option: string) => {
-    setSelectedAnswer(option)
-    setShowFeedback(true)
-    
-    setTimeout(() => {
-      if (option === correctAnswer) {
-        onCorrect()
-      } else {
-        onIncorrect(option, correctAnswer)
-      }
-      setSelectedAnswer(null)
-      setShowFeedback(false)
-    }, 1500)
+const MultipleChoice = ({
+  question,
+  options,
+  correctAnswer,
+  onCorrect,
+  onIncorrect,
+  onNext,
+  onPrevious,
+  hasNext,
+  hasPrevious,
+  nextQuestion,
+  previousQuestion
+}: MultipleChoiceProps) => {
+  const handleOptionClick = (option: string) => {
+    if (option === correctAnswer) {
+      onCorrect()
+    } else {
+      onIncorrect(option, correctAnswer)
+    }
   }
 
   return (
-    <div className="space-y-4">
-      <div className="p-6 bg-card rounded-lg shadow-sm">
-        <h3 className="text-xl font-medium mb-4">{question}</h3>
-        <div className="grid grid-cols-1 gap-3">
-          {options.map((option) => (
-            <Button
-              key={option}
-              onClick={() => handleAnswer(option)}
-              disabled={showFeedback}
-              variant={
-                showFeedback
-                  ? option === correctAnswer
-                    ? "default"
-                    : option === selectedAnswer
-                    ? "destructive"
-                    : "outline"
-                  : "outline"
-              }
-              className="w-full justify-start text-left h-auto py-3 px-4"
-            >
-              {option}
-            </Button>
-          ))}
+    <div className="space-y-6">
+      <div className="text-2xl font-semibold text-center mb-8">{question}</div>
+      <div className="space-y-4">
+        {options.map((option) => (
+          <Button
+            key={option}
+            variant="outline"
+            className="w-full text-left justify-start h-auto py-4 px-6"
+            onClick={() => handleOptionClick(option)}
+          >
+            {option}
+          </Button>
+        ))}
+      </div>
+
+      <div className="flex justify-between items-center mt-8">
+        <div className="flex flex-col items-start">
+          <Button
+            variant="outline"
+            onClick={onPrevious}
+            disabled={!hasPrevious}
+            className="flex items-center gap-2"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Previous
+          </Button>
+          {hasPrevious && previousQuestion && (
+            <span className="text-sm text-muted-foreground mt-1 ml-2">
+              {previousQuestion}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-col items-end">
+          <Button
+            variant="outline"
+            onClick={onNext}
+            disabled={!hasNext}
+            className="flex items-center gap-2"
+          >
+            Next
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+          {hasNext && nextQuestion && (
+            <span className="text-sm text-muted-foreground mt-1 mr-2">
+              {nextQuestion}
+            </span>
+          )}
         </div>
       </div>
-      <AnimatePresence>
-        {showFeedback && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className={`p-4 rounded-lg ${
-              selectedAnswer === correctAnswer ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-            }`}
-          >
-            {selectedAnswer === correctAnswer ? "Correct!" : `Incorrect. The correct answer is: ${correctAnswer}`}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   )
 }

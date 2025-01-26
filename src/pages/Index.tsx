@@ -208,6 +208,12 @@ const Index = () => {
                     correctAnswer={getCurrentQuestion()!.back}
                     onCorrect={handleCorrectAnswer}
                     onIncorrect={handleIncorrectAnswer}
+                    onNext={handleNext}
+                    onPrevious={handlePrevious}
+                    hasNext={hasNextQuestion()}
+                    hasPrevious={hasPreviousQuestion()}
+                    nextQuestion={getNextQuestion()}
+                    previousQuestion={getPreviousQuestion()}
                   />
                 ) : null}
               </div>
