@@ -60,58 +60,52 @@ const FlashCard = ({
         </label>
       </div>
       
-      <div className="relative w-[300px] h-[400px] cursor-pointer perspective-1000">
-        <AnimatePresence initial={false} mode="wait">
-          {!isFlipped ? (
-            <motion.div
-              key="front"
-              className="absolute w-full h-full"
-              initial={{ rotateY: 180 }}
-              animate={{ rotateY: 0 }}
-              exit={{ rotateY: -180 }}
-              transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+      <div className="relative w-[300px] h-[400px] [perspective:1000px]">
+        <div 
+          className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+            isFlipped ? '[transform:rotateY(180deg)]' : ''
+          }`}
+        >
+          {/* Front of card */}
+          <div 
+            className="absolute w-full h-full [backface-visibility:hidden]"
+            onClick={handleFlip}
+          >
+            <Card 
+              className="w-full h-full p-6 flex flex-col items-center justify-center text-2xl font-semibold bg-card hover:bg-accent/10 transition-colors cursor-pointer"
             >
-              <Card 
-                className="w-full h-full p-6 flex flex-col items-center justify-center text-2xl font-semibold bg-card hover:bg-accent/10 transition-colors"
-                onClick={handleFlip}
-              >
-                <div className="text-center break-words max-w-[250px]">{front}</div>
-                {showPronunciation && pronunciation && (
-                  <span className="text-sm text-muted-foreground mt-2 text-center break-words max-w-[250px]">
-                    {pronunciation}
-                  </span>
-                )}
-              </Card>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="back"
-              className="absolute w-full h-full"
-              initial={{ rotateY: -180 }}
-              animate={{ rotateY: 0 }}
-              exit={{ rotateY: 180 }}
-              transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            >
-              <Card className="w-full h-full p-6 flex flex-col items-center justify-center">
-                <div className="text-2xl font-semibold mb-8 text-center break-words max-w-[250px]">{back}</div>
-                <div className="flex gap-4">
-                  <Button 
-                    onClick={() => handleResponse(true)}
-                    className="bg-green-500 hover:bg-green-600"
-                  >
-                    I knew it!
-                  </Button>
-                  <Button 
-                    onClick={() => handleResponse(false)}
-                    variant="outline"
-                  >
-                    Still learning
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <div className="text-center break-words max-w-[250px]">{front}</div>
+              {showPronunciation && pronunciation && (
+                <span className="text-sm text-muted-foreground mt-2 text-center break-words max-w-[250px]">
+                  {pronunciation}
+                </span>
+              )}
+            </Card>
+          </div>
+
+          {/* Back of card */}
+          <div 
+            className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]"
+          >
+            <Card className="w-full h-full p-6 flex flex-col items-center justify-center">
+              <div className="text-2xl font-semibold mb-8 text-center break-words max-w-[250px]">{back}</div>
+              <div className="flex gap-4">
+                <Button 
+                  onClick={() => handleResponse(true)}
+                  className="bg-green-500 hover:bg-green-600"
+                >
+                  I knew it!
+                </Button>
+                <Button 
+                  onClick={() => handleResponse(false)}
+                  variant="outline"
+                >
+                  Still learning
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
       </div>
 
       <div className="flex justify-between items-center mt-4">
