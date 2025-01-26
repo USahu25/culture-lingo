@@ -12,6 +12,24 @@ export const maharashtraQuestions: {
       pronunciation: "Namaskar",
       options: ["Hello", "Goodbye", "Thank you", "Please"],
     },
+    {
+      front: "धन्यवाद",
+      back: "Thank you",
+      pronunciation: "Dhanyavaad",
+      options: ["Thank you", "Hello", "Goodbye", "Please"],
+    },
+    {
+      front: "शुभ प्रभात",
+      back: "Good Morning",
+      pronunciation: "Shubh Prabhat",
+      options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
+    },
+    {
+      front: "शुभ रात्री",
+      back: "Good Night",
+      pronunciation: "Shubh Ratri",
+      options: ["Good Night", "Good Morning", "Good Evening", "Hello"],
+    }
   ],
   intermediate: [
     {
@@ -49,6 +67,24 @@ export const maharashtraQuestions: {
       back: "Do you know English?",
       pronunciation: "Tumhala Ingraji yete ka?",
       options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    },
+    {
+      front: "वडा पाव",
+      back: "Vada Pav (Street Food)",
+      pronunciation: "Vada Pav",
+      options: ["Vada Pav (Street Food)", "Sweet Dish", "Main Course", "Beverage"],
+    },
+    {
+      front: "गणपती बाप्पा",
+      back: "Ganpati Bappa (Lord Ganesha)",
+      pronunciation: "Ganpati Bappa",
+      options: ["Ganpati Bappa (Lord Ganesha)", "Festival Name", "Temple Name", "City Name"],
+    },
+    {
+      front: "लावणी",
+      back: "Lavani (Folk Dance)",
+      pronunciation: "Lavani",
+      options: ["Lavani (Folk Dance)", "Folk Song", "Traditional Dress", "Festival"],
     }
   ],
   advanced: [
@@ -58,5 +94,23 @@ export const maharashtraQuestions: {
       pronunciation: "Mi Marathi shikat aahe",
       options: ["I am learning Marathi", "I like Marathi food", "I live in Maharashtra", "I speak Marathi"],
     },
+    {
+      front: "छत्रपती शिवाजी टर्मिनस",
+      back: "Chhatrapati Shivaji Terminus",
+      pronunciation: "Chhatrapati Shivaji Terminus",
+      options: ["Chhatrapati Shivaji Terminus", "Gateway of India", "Elephanta Caves", "Marine Drive"],
+    },
+    {
+      front: "महाराष्ट्रीयन थाळी",
+      back: "Maharashtrian Thali (Traditional Meal)",
+      pronunciation: "Maharashtrian Thali",
+      options: ["Maharashtrian Thali (Traditional Meal)", "Street Food", "Dessert", "Beverage"],
+    },
+    {
+      front: "वारकरी संप्रदाय",
+      back: "Warkari Tradition",
+      pronunciation: "Warkari Sampraday",
+      options: ["Warkari Tradition", "Modern Movement", "Political Party", "Sports Team"],
+    }
   ],
 };

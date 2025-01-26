@@ -67,6 +67,24 @@ export const karnatakaQuestions: {
       back: "Do you know English?",
       pronunciation: "Nimage English gotta?",
       options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+    },
+    {
+      front: "ಮೈಸೂರು ಪಾಕ್",
+      back: "Mysore Pak (Traditional Sweet)",
+      pronunciation: "Mysore Pak",
+      options: ["Mysore Pak (Traditional Sweet)", "Mysore Silk", "Mysore Palace", "Mysore Painting"],
+    },
+    {
+      front: "ಹಂಪಿ",
+      back: "Hampi (UNESCO World Heritage Site)",
+      pronunciation: "Hampi",
+      options: ["Hampi (UNESCO World Heritage Site)", "Modern City", "Beach Town", "Hill Station"],
+    },
+    {
+      front: "ಯಕ್ಷಗಾನ",
+      back: "Yakshagana (Traditional Theatre)",
+      pronunciation: "Yakshagana",
+      options: ["Yakshagana (Traditional Theatre)", "Modern Dance", "Folk Song", "Classical Music"],
     }
   ],
   advanced: [
@@ -88,5 +106,17 @@ export const karnatakaQuestions: {
       pronunciation: "Nanage Kannada cinema tumba ishta",
       options: ["I really like Kannada movies", "I watch Kannada movies", "Kannada movies are good", "I understand Kannada movies"],
     },
+    {
+      front: "ಬೆಂಗಳೂರು ಐಟಿ ಹಬ್",
+      back: "Bangalore IT Hub",
+      pronunciation: "Bengaluru IT Hub",
+      options: ["Bangalore IT Hub", "Bangalore Market", "Bangalore Park", "Bangalore Museum"],
+    },
+    {
+      front: "ಕುವೆಂಪು",
+      back: "Kuvempu (Famous Poet)",
+      pronunciation: "Kuvempu",
+      options: ["Kuvempu (Famous Poet)", "Kuvempu University", "Kuvempu Road", "Kuvempu Theatre"],
+    }
   ],
 };
