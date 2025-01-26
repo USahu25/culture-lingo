@@ -36,6 +36,36 @@ export const keralaQuestions: {
       pronunciation: "Shubha Rathri",
       options: ["Good Morning", "Good Evening", "Good Night", "Hello"],
     },
+    {
+      front: "സദ്യ",
+      back: "Sadhya (Traditional Feast)",
+      pronunciation: "Sadhya",
+      options: ["Sadhya (Traditional Feast)", "Breakfast", "Snack", "Dinner"],
+    },
+    {
+      front: "കഥകളി",
+      back: "Kathakali (Classical Dance)",
+      pronunciation: "Kathakali",
+      options: ["Kathakali (Classical Dance)", "Folk Dance", "Music", "Drama"],
+    },
+    {
+      front: "ഓണം",
+      back: "Onam (Harvest Festival)",
+      pronunciation: "Onam",
+      options: ["Onam (Harvest Festival)", "New Year", "Religious Festival", "Cultural Day"],
+    },
+    {
+      front: "വള്ളം കളി",
+      back: "Vallam Kali (Boat Race)",
+      pronunciation: "Vallam Kali",
+      options: ["Vallam Kali (Boat Race)", "Car Race", "Marathon", "Swimming Competition"],
+    },
+    {
+      front: "മുന്തിരി",
+      back: "Cashew",
+      pronunciation: "Munthiri",
+      options: ["Cashew", "Almond", "Peanut", "Pistachio"],
+    }
   ],
   intermediate: [
     {
@@ -69,42 +99,91 @@ export const keralaQuestions: {
       options: ["I need help", "I want food", "I am lost", "Call the police"],
     },
     {
-      front: "എനിക്ക് വഴി അറിയില്ല",
-      back: "I don't know the way",
-      pronunciation: "Enikku vazhi ariyilla",
-      options: ["I don't know the way", "I am lost", "Where is this?", "Help me"],
+      front: "ആയുർവേദം",
+      back: "Ayurveda (Traditional Medicine)",
+      pronunciation: "Ayurvedam",
+      options: ["Ayurveda (Traditional Medicine)", "Modern Medicine", "Exercise", "Yoga"],
     },
     {
-      front: "നിങ്ങൾക്ക് ഇംഗ്ലീഷ് അറിയാമോ?",
-      back: "Do you know English?",
-      pronunciation: "Ningalkku English ariyamo?",
-      options: ["Do you know English?", "Can you help me?", "What language do you speak?", "Do you understand me?"],
+      front: "തേയില തോട്ടം",
+      back: "Tea Plantation",
+      pronunciation: "Theyila Thottam",
+      options: ["Tea Plantation", "Coffee Farm", "Spice Garden", "Rice Field"],
+    },
+    {
+      front: "കായൽ",
+      back: "Backwaters",
+      pronunciation: "Kayal",
+      options: ["Backwaters", "Ocean", "River", "Lake"],
+    },
+    {
+      front: "മോഹിനിയാട്ടം",
+      back: "Mohiniyattam (Classical Dance)",
+      pronunciation: "Mohiniyattam",
+      options: ["Mohiniyattam (Classical Dance)", "Folk Song", "Modern Dance", "Street Performance"],
+    },
+    {
+      front: "പുട്ട്",
+      back: "Puttu (Steam Cake)",
+      pronunciation: "Puttu",
+      options: ["Puttu (Steam Cake)", "Bread", "Rice", "Noodles"],
     }
   ],
   advanced: [
     {
-      front: "ഞാൻ മലയാളം പഠിക്കുകയാണ്",
-      back: "I am learning Malayalam",
-      pronunciation: "Njan Malayalam padikkukayanu",
-      options: ["I am learning Malayalam", "I like Kerala food", "I live in Kerala", "I speak Malayalam"],
+      front: "കേരളത്തിലെ കായലുകൾ ഒരു സമാന്തര സമുദ്രമാണ്",
+      back: "Kerala's backwaters form a parallel ocean",
+      pronunciation: "Keralathile kayalukal oru samanthara samudramanu",
+      options: [
+        "Kerala's backwaters form a parallel ocean",
+        "Kerala has no backwaters",
+        "Kerala's backwaters are artificial",
+        "Kerala's backwaters are only for fishing"
+      ],
     },
     {
-      front: "എനിക്ക് കേരള ഭക്ഷണം ഇഷ്ടമാണ്",
-      back: "I like Kerala food",
-      pronunciation: "Enikku Kerala bhakshanam ishtamanu",
-      options: ["I am learning Malayalam", "I like Kerala food", "I live in Kerala", "I speak Malayalam"],
+      front: "കേരളത്തിൽ 44 നദികൾ ഉണ്ട്",
+      back: "Kerala has 44 rivers",
+      pronunciation: "Keralathil nalpathinalu nadikal undu",
+      options: [
+        "Kerala has 44 rivers",
+        "Kerala has no rivers",
+        "Kerala has 100 rivers",
+        "Kerala has 10 rivers"
+      ],
     },
     {
-      front: "എനിക്ക് മലയാളം സംസാരിക്കാൻ കഴിയും",
-      back: "I can speak Malayalam",
-      pronunciation: "Enikku Malayalam samsarikkan kazhiyum",
-      options: ["I can speak Malayalam", "I am learning Malayalam", "I like Malayalam", "I understand Malayalam"],
+      front: "മലയാളം ദ്രാവിഡ ഭാഷാ കുടുംബത്തിൽ പെടുന്നു",
+      back: "Malayalam belongs to the Dravidian language family",
+      pronunciation: "Malayalam dravida bhasha kudumbathil pedunnu",
+      options: [
+        "Malayalam belongs to the Dravidian language family",
+        "Malayalam is an Indo-European language",
+        "Malayalam is a modern language",
+        "Malayalam has no script"
+      ],
     },
     {
-      front: "കേരളം എന്റെ സ്വന്തം നാടാണ്",
-      back: "Kerala is my homeland",
-      pronunciation: "Kerala ente swantham naadanu",
-      options: ["Kerala is my homeland", "I live in Kerala", "I like Kerala", "I am from Kerala"],
+      front: "വയനാട് കാപ്പി",
+      back: "Wayanad Coffee",
+      pronunciation: "Wayanad Kappi",
+      options: [
+        "Wayanad Coffee",
+        "Wayanad Tea",
+        "Wayanad Spices",
+        "Wayanad Rice"
+      ],
     },
+    {
+      front: "തൃശ്ശൂർ പൂരം",
+      back: "Thrissur Pooram (Temple Festival)",
+      pronunciation: "Thrissur Pooram",
+      options: [
+        "Thrissur Pooram (Temple Festival)",
+        "Thrissur Food Festival",
+        "Thrissur Music Festival",
+        "Thrissur Art Show"
+      ],
+    }
   ],
 };
