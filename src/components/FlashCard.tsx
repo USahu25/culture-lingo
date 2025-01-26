@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
 import { Checkbox } from "@/components/ui/checkbox"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -15,6 +14,8 @@ interface FlashCardProps {
   onPrevious: () => void
   hasNext: boolean
   hasPrevious: boolean
+  nextQuestion?: string
+  previousQuestion?: string
 }
 
 const FlashCard = ({ 
@@ -26,7 +27,9 @@ const FlashCard = ({
   onNext,
   onPrevious,
   hasNext,
-  hasPrevious
+  hasPrevious,
+  nextQuestion,
+  previousQuestion
 }: FlashCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false)
   const [showPronunciation, setShowPronunciation] = useState(true)
@@ -109,24 +112,38 @@ const FlashCard = ({
       </div>
 
       <div className="flex justify-between items-center mt-4">
-        <Button
-          variant="outline"
-          onClick={onPrevious}
-          disabled={!hasPrevious}
-          className="flex items-center gap-2"
-        >
-          <ChevronLeft className="w-4 h-4" />
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          onClick={onNext}
-          disabled={!hasNext}
-          className="flex items-center gap-2"
-        >
-          Next
-          <ChevronRight className="w-4 h-4" />
-        </Button>
+        <div className="flex flex-col items-start">
+          <Button
+            variant="outline"
+            onClick={onPrevious}
+            disabled={!hasPrevious}
+            className="flex items-center gap-2"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Previous
+          </Button>
+          {hasPrevious && previousQuestion && (
+            <span className="text-sm text-muted-foreground mt-1 ml-2">
+              {previousQuestion}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-col items-end">
+          <Button
+            variant="outline"
+            onClick={onNext}
+            disabled={!hasNext}
+            className="flex items-center gap-2"
+          >
+            Next
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+          {hasNext && nextQuestion && (
+            <span className="text-sm text-muted-foreground mt-1 mr-2">
+              {nextQuestion}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   )

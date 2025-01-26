@@ -112,6 +112,18 @@ const Index = () => {
     return questions[currentQuestionIndex]
   }
 
+  const getNextQuestion = () => {
+    if (!selectedRegion || !difficulty) return null
+    const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
+    return questions[currentQuestionIndex + 1]?.front
+  }
+
+  const getPreviousQuestion = () => {
+    if (!selectedRegion || !difficulty) return null
+    const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
+    return questions[currentQuestionIndex - 1]?.front
+  }
+
   const hasNextQuestion = () => {
     if (!selectedRegion || !difficulty) return false
     const questions = questionsData[selectedRegion][difficulty as keyof typeof questionsData[string]]
@@ -186,6 +198,8 @@ const Index = () => {
                     onPrevious={handlePrevious}
                     hasNext={hasNextQuestion()}
                     hasPrevious={hasPreviousQuestion()}
+                    nextQuestion={getNextQuestion()}
+                    previousQuestion={getPreviousQuestion()}
                   />
                 ) : getCurrentQuestion() ? (
                   <MultipleChoice
