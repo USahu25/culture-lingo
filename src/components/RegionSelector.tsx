@@ -28,7 +28,7 @@ const regions = [
   },
   {
     name: "Telangana",
-    image: "https://images.unsplash.com/photo-1590156546946-ce55a12a6947",
+    image: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1",
     description: "Learn Telugu and discover the heart of South India",
   },
   {
