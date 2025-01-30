@@ -27,9 +27,9 @@ const regions = [
     description: "Learn Marathi and explore the land of warriors",
   },
   {
-    name: "Punjab",
-    image: "https://images.unsplash.com/photo-1623051425306-70cfe23c3639",
-    description: "Master Punjabi and discover the heart of India's culture",
+    name: "Telangana",
+    image: "https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1",
+    description: "Learn Telugu and discover the heart of South India",
   },
   {
     name: "Bengal",
