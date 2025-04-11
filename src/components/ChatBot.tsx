@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Loader2 } from "lucide-react"
+import { Loader2, SendIcon } from "lucide-react"
 import { supabase } from "@/integrations/supabase/client"
 import { useToast } from "@/hooks/use-toast"
 
@@ -24,18 +24,26 @@ const ChatBot = ({ region }: ChatBotProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const { toast } = useToast()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   // Auto-scroll to the bottom of the messages container
   useEffect(() => {
     scrollToBottom()
   }, [messages])
 
+  // Focus input on initial load
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [])
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   const handleSend = async () => {
-    if (!input.trim()) return
+    if (!input.trim() || isLoading) return
     
     setIsLoading(true)
     const userMessage = input
@@ -74,6 +82,10 @@ const ChatBot = ({ region }: ChatBotProps) => {
       })
     } finally {
       setIsLoading(false)
+      // Focus back on input after sending
+      if (inputRef.current) {
+        inputRef.current.focus()
+      }
     }
   }
 
@@ -85,7 +97,7 @@ const ChatBot = ({ region }: ChatBotProps) => {
 
   return (
     <Card className="p-4 h-[500px] flex flex-col">
-      <div className="flex-1 overflow-auto space-y-4 mb-4 pr-2">
+      <div className="flex-1 overflow-auto space-y-4 mb-4 pr-2 scrollbar-thin">
         {messages.map((message, index) => (
           <div 
             key={index} 
@@ -96,7 +108,7 @@ const ChatBot = ({ region }: ChatBotProps) => {
             }`}
           >
             <span className="font-semibold">
-              {message.role === 'assistant' ? 'Assistant: ' : 'You: '}
+              {message.role === 'assistant' ? `${region} Assistant: ` : 'You: '}
             </span>
             {message.content === '...' ? (
               <span className="inline-flex items-center">
@@ -110,12 +122,13 @@ const ChatBot = ({ region }: ChatBotProps) => {
         ))}
         <div ref={messagesEndRef} />
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-auto">
         <Input
+          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message..."
+          placeholder="Ask about language, culture, or traditions..."
           onKeyDown={handleKeyDown}
           disabled={isLoading}
           className="flex-1"
@@ -123,14 +136,12 @@ const ChatBot = ({ region }: ChatBotProps) => {
         <Button 
           onClick={handleSend} 
           disabled={isLoading || !input.trim()}
+          className="px-3"
         >
           {isLoading ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin mr-2" />
-              Sending
-            </>
+            <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            'Send'
+            <SendIcon className="h-4 w-4" />
           )}
         </Button>
       </div>
