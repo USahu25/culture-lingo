@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Loader2 } from "lucide-react"
 import { supabase } from "@/integrations/supabase/client"
 import { useToast } from "@/hooks/use-toast"
 
@@ -44,29 +45,43 @@ const ChatBot = ({ region }: ChatBotProps) => {
     setMessages(prev => [...prev, { role: 'user', content: userMessage }])
 
     try {
+      // Add temporary typing indicator
+      setMessages(prev => [...prev, { role: 'assistant', content: '...' }])
+
       const { data, error } = await supabase.functions.invoke('chat-with-gemini', {
         body: { message: userMessage, region }
       })
 
       if (error) throw error
 
-      // Add assistant response to chat
-      setMessages(prev => [...prev, { role: 'assistant', content: data.response }])
+      // Replace typing indicator with actual response
+      setMessages(prev => prev.slice(0, prev.length - 1).concat({ 
+        role: 'assistant', 
+        content: data.response 
+      }))
     } catch (error) {
       console.error('Error calling Gemini API:', error)
+      // Replace typing indicator with error message
+      setMessages(prev => prev.slice(0, prev.length - 1).concat({ 
+        role: 'assistant', 
+        content: 'Sorry, I encountered an error. Please try again later.' 
+      }))
+      
       toast({
         title: "Error",
         description: "Failed to get a response. Please try again later.",
         variant: "destructive"
       })
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try again later.' 
-      }])
     } finally {
       setIsLoading(false)
     }
   }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && !isLoading && input.trim()) {
+      handleSend();
+    }
+  };
 
   return (
     <Card className="p-4 h-[500px] flex flex-col">
@@ -83,7 +98,14 @@ const ChatBot = ({ region }: ChatBotProps) => {
             <span className="font-semibold">
               {message.role === 'assistant' ? 'Assistant: ' : 'You: '}
             </span>
-            {message.content}
+            {message.content === '...' ? (
+              <span className="inline-flex items-center">
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                Thinking...
+              </span>
+            ) : (
+              message.content
+            )}
           </div>
         ))}
         <div ref={messagesEndRef} />
@@ -94,14 +116,22 @@ const ChatBot = ({ region }: ChatBotProps) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your message..."
-          onKeyDown={(e) => e.key === "Enter" && !isLoading && handleSend()}
+          onKeyDown={handleKeyDown}
           disabled={isLoading}
+          className="flex-1"
         />
         <Button 
           onClick={handleSend} 
-          disabled={isLoading}
+          disabled={isLoading || !input.trim()}
         >
-          {isLoading ? 'Sending...' : 'Send'}
+          {isLoading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin mr-2" />
+              Sending
+            </>
+          ) : (
+            'Send'
+          )}
         </Button>
       </div>
     </Card>
