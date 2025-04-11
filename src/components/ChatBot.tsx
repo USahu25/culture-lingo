@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Loader2, SendIcon } from "lucide-react"
+import { Loader2, SendIcon, AlertCircle } from "lucide-react"
 import { supabase } from "@/integrations/supabase/client"
 import { useToast } from "@/hooks/use-toast"
 
@@ -12,7 +12,7 @@ interface ChatBotProps {
 }
 
 interface Message {
-  role: 'user' | 'assistant'
+  role: 'user' | 'assistant' | 'error'
   content: string
 }
 
@@ -71,7 +71,7 @@ const ChatBot = ({ region }: ChatBotProps) => {
       console.error('Error calling Gemini API:', error)
       // Replace typing indicator with error message
       setMessages(prev => prev.slice(0, prev.length - 1).concat({ 
-        role: 'assistant', 
+        role: 'error', 
         content: 'Sorry, I encountered an error. Please try again later.' 
       }))
       
@@ -104,11 +104,17 @@ const ChatBot = ({ region }: ChatBotProps) => {
             className={`p-3 rounded ${
               message.role === 'assistant' 
                 ? 'bg-muted' 
+                : message.role === 'error'
+                ? 'bg-red-100 dark:bg-red-900/20'
                 : 'bg-primary/10'
             }`}
           >
             <span className="font-semibold">
-              {message.role === 'assistant' ? `${region} Assistant: ` : 'You: '}
+              {message.role === 'assistant' 
+                ? `${region} Assistant: ` 
+                : message.role === 'error'
+                ? <span className="flex items-center text-red-600 dark:text-red-400"><AlertCircle className="h-4 w-4 mr-1" /> Error: </span>
+                : 'You: '}
             </span>
             {message.content === '...' ? (
               <span className="inline-flex items-center">

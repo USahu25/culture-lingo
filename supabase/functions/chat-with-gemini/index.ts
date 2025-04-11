@@ -3,8 +3,8 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY')!;
-// Updated to use the correct model name in the URL
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
+// Updated to use the correct model name according to the latest Gemini API
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -27,7 +27,7 @@ serve(async (req) => {
     If asked about topics outside of ${region}'s language or culture, gently redirect to relevant ${region} content.
     Include a few words in the regional language when appropriate to help with learning.`;
 
-    // Updated request body structure to match the current Gemini API format
+    // Updated request structure to match the current Gemini API format
     const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
       method: 'POST',
       headers: {
@@ -47,7 +47,7 @@ serve(async (req) => {
           temperature: 0.7,
           topK: 40,
           topP: 0.95,
-          maxOutputTokens: 1024,
+          maxOutputTokens: 800,
         }
       })
     });
