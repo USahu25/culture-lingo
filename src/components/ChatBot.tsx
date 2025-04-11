@@ -1,7 +1,10 @@
-import { useState } from "react"
+
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import { supabase } from "@/integrations/supabase/client"
+import { useToast } from "@/hooks/use-toast"
 
 interface ChatBotProps {
   region: string | null
@@ -18,6 +21,17 @@ const ChatBot = ({ region }: ChatBotProps) => {
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const { toast } = useToast()
+
+  // Auto-scroll to the bottom of the messages container
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   const handleSend = async () => {
     if (!input.trim()) return
@@ -40,6 +54,11 @@ const ChatBot = ({ region }: ChatBotProps) => {
       setMessages(prev => [...prev, { role: 'assistant', content: data.response }])
     } catch (error) {
       console.error('Error calling Gemini API:', error)
+      toast({
+        title: "Error",
+        description: "Failed to get a response. Please try again later.",
+        variant: "destructive"
+      })
       setMessages(prev => [...prev, { 
         role: 'assistant', 
         content: 'Sorry, I encountered an error. Please try again later.' 
@@ -51,7 +70,7 @@ const ChatBot = ({ region }: ChatBotProps) => {
 
   return (
     <Card className="p-4 h-[500px] flex flex-col">
-      <div className="flex-1 overflow-auto space-y-4 mb-4">
+      <div className="flex-1 overflow-auto space-y-4 mb-4 pr-2">
         {messages.map((message, index) => (
           <div 
             key={index} 
@@ -67,15 +86,15 @@ const ChatBot = ({ region }: ChatBotProps) => {
             {message.content}
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
       <div className="flex gap-2">
-        <input
+        <Input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 p-2 border rounded"
           placeholder="Type your message..."
-          onKeyPress={(e) => e.key === "Enter" && !isLoading && handleSend()}
+          onKeyDown={(e) => e.key === "Enter" && !isLoading && handleSend()}
           disabled={isLoading}
         />
         <Button 
